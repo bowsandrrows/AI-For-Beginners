@@ -4,34 +4,28 @@ Simple Neural Network from Scratch
 
 This example builds a basic neural network without using any ML frameworks.
 It helps you understand what's happening "under the hood" in neural networks.
-
 What you'll learn:
 - How neurons work
 - Forward propagation (making predictions)
 - Backward propagation (learning from mistakes)
 - The sigmoid activation function
 
-Use case: Learn to classify points as "above" or "below" a line.
-"""
+Use case: Learn to classify points as "above" or "below" a line. """
 
 import random
 import math
 
 def sigmoid(x):
-    """
-    Sigmoid activation function: converts any value to a number between 0 and 1.
-    
+    """ Sigmoid activation function: converts any value to a number between 0 and 1.    
     This is like asking "how confident are we?" 
     - Values close to 1 mean "very confident YES"
     - Values close to 0 mean "very confident NO"
-    - Values around 0.5 mean "not sure"
-    
+    - Values around 0.5 mean "not sure"    
     Args:
-        x: Input value
-        
+        x: Input value   
     Returns:
-        Value between 0 and 1
-    """
+        Value between 0 and 1 """
+    
     # Prevent overflow for very large/small numbers
     if x > 100:
         return 1.0
@@ -41,30 +35,23 @@ def sigmoid(x):
 
 
 def sigmoid_derivative(x):
-    """
-    Derivative of sigmoid function - needed for learning.
-    This tells us how much to adjust our weights.
-    
+    """ Derivative of sigmoid function - needed for learning.
+    This tells us how much to adjust our weights.   
     Args:
-        x: Sigmoid output value
-        
+        x: Sigmoid output value        
     Returns:
-        Derivative value
-    """
+        Derivative value """
     return x * (1 - x)
 
 
 class SimpleNeuron:
-    """
-    A single artificial neuron - the building block of neural networks.
-    
+    """A single artificial neuron - the building block of neural networks.   
     Think of it as a tiny decision maker that:
     1. Takes inputs (like features of data)
     2. Multiplies them by learned weights
     3. Adds them up with a bias
     4. Applies an activation function
-    5. Outputs a prediction
-    """
+    5. Outputs a prediction """
     
     def __init__(self, num_inputs):
         """
