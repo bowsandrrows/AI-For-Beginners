@@ -31,11 +31,9 @@ class SimpleAILearner:
         
     def predict(self, x):
         """
-        Make a prediction based on what we've learned.
-        
+        Make a prediction based on what we've learned.        
         Args:
-            x: Input value
-            
+            x: Input value         
         Returns:
             Predicted output
         """
@@ -44,7 +42,6 @@ class SimpleAILearner:
     def train(self, training_data, epochs=100):
         """
         Train the AI to learn the pattern in the data.
-        
         Args:
             training_data: List of (input, output) pairs
             epochs: Number of times to go through all the data
